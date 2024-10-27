@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "../stylesheet/Post.css";
-import { RiLeafLine } from "react-icons/ri";
-import { RiLeafFill } from "react-icons/ri";
+import { backendURL } from ".././config/config.js";
 import { BiCommentEdit } from "react-icons/bi";
 import { HiShare } from "react-icons/hi";
 import { FcLike } from "react-icons/fc";
@@ -107,7 +106,7 @@ class Post extends Component {
 					<img
 						className="post-img"
 						alt=""
-						src={"http://localhost:3000/" + this.props.path}
+						src={backendURL+"" + this.props.path}
 						onClick={() => this.FocusPost(this.props.postno)}
 					/>
 					<div className="details">

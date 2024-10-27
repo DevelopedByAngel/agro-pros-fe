@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Loader from "./Component/Loader.js";
-import Signup from "./Component/Signup.js";
 import Login from "./Component/Login.js";
 import UploadDP from "./Component/UploadDP.js";
 import PostList from "./Component/PostList.js";
@@ -10,13 +9,11 @@ import CommentList from "./Component/CommentList.js";
 import Menu from "./Component/Menu.js";
 import Search from "./Component/Search.js";
 import ProfileHeader from "./Component/ProfileHeader.js";
-import Store from "./Component/Store.js";
 import Settings from "./Component/Settings.js";
 import UsersList from "./Component/UsersList.js";
 import FriendsList from "./Component/FriendsList.js";
 import Productlist from "./Component/ProductList.js";
 import AddProduct from "./Component/AddProduct.js";
-import Buy from "./Component/Buy.js";
 import EditProduct from "./Component/EditProduct.js";
 import AddReview from "./Component/AddReview.js";
 import ReviewList from "./Component/ReviewList.js";
@@ -24,6 +21,7 @@ import Tips from "./Component/Tips.js";
 import DoubtList from "./Component/DoubtList.js";
 import AddDoubt from "./Component/AddDoubt.js";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { backendURL } from "./config/config.js";
 import "./App.css";
 import $ from "jquery";
 
@@ -56,7 +54,7 @@ class App extends Component {
   }
   login = (id, password) => {
     console.log("log");
-    fetch("http://localhost:3000/login", {
+    fetch(backendURL+"login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -77,7 +75,7 @@ class App extends Component {
   };
   signup = (id, email, password) => {
     console.log("signup");
-    fetch("http://localhost:3000/signup", {
+    fetch(backendURL+"signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -96,7 +94,7 @@ class App extends Component {
   };
   hashtags = (hashtag) => {
     this.loading(true);
-    fetch("http://localhost:3000/hashtags/" + hashtag, {
+    fetch(backendURL+"hashtags/" + hashtag, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -108,7 +106,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   request = (requestName) => {
-    fetch("http://localhost:3000/request", {
+    fetch(backendURL+"request", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -128,7 +126,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   acceptRequest = (requestName) => {
-    fetch("http://localhost:3000/acceptRequest", {
+    fetch(backendURL+"acceptRequest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -149,7 +147,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   cancelRequest = (requestName) => {
-    fetch("http://localhost:3000/cancelRequest", {
+    fetch(backendURL+"cancelRequest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -169,7 +167,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   Unfriend = (friendName) => {
-    fetch("http://localhost:3000/Unfriend", {
+    fetch(backendURL+"Unfriend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -190,7 +188,7 @@ class App extends Component {
   };
   product = (product) => {
     this.loading(true);
-    fetch("http://localhost:3000/product/", {
+    fetch(backendURL+"product/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -208,7 +206,7 @@ class App extends Component {
   feeds = () => {
     this.loading(true);
     console.log("feed", this.state.user);
-    fetch("http://localhost:3000/feeds/" + this.state.user._id, {
+    fetch(backendURL+"feeds/" + this.state.user._id, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -222,7 +220,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   like = (postID) => {
-    fetch("http://localhost:3000/like", {
+    fetch(backendURL+"like", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -237,7 +235,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   share = (postID) => {
-    fetch("http://localhost:3000/share", {
+    fetch(backendURL+"share", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -252,7 +250,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   comment = (cmt) => {
-    fetch("http://localhost:3000/comment", {
+    fetch(backendURL+"comment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -280,7 +278,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   review = (cmt) => {
-    fetch("http://localhost:3000/review", {
+    fetch(backendURL+"review", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -308,7 +306,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   reply = (cmtID, reply) => {
-    fetch("http://localhost:3000/reply", {
+    fetch(backendURL+"reply", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -336,7 +334,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   };
   likeComment = (cmtID) => {
-    fetch("http://localhost:3000/likeComment", {
+    fetch(backendURL+"likeComment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -363,7 +361,7 @@ class App extends Component {
     if (q[0] === "#") {
       this.hashtags(q.slice(1));
     } else {
-      fetch("http://localhost:3000/search/" + q, {
+      fetch(backendURL+"search/" + q, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       })
@@ -381,7 +379,7 @@ class App extends Component {
   viewProfile(user) {
     this.loading(true);
     console.log("going to view profile");
-    fetch("http://localhost:3000/getUser", {
+    fetch(backendURL+"getUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -399,7 +397,7 @@ class App extends Component {
       .catch((err) => alert(err.message));
   }
   postDoubt(doubt) {
-    fetch("http://localhost:3000/doubt", {
+    fetch(backendURL+"doubt", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -416,7 +414,7 @@ class App extends Component {
       });
   }
   postAnswer(id, answer) {
-    fetch("http://localhost:3000/answer", {
+    fetch(backendURL+"answer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -440,7 +438,7 @@ class App extends Component {
       });
   }
   getDoubts() {
-    fetch("http://localhost:3000/getdoubt", {
+    fetch(backendURL+"getdoubt", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -450,7 +448,7 @@ class App extends Component {
   getUser = () => {
     this.loading(true);
     console.log("going to view your profile");
-    fetch("http://localhost:3000/getUser", {
+    fetch(backendURL+"getUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

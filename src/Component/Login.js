@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Signup from "./Signup.js";
 import $ from "jquery";
-// import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import "../stylesheet/Login.css";
 import { HiOutlineKey } from "react-icons/hi";

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import $ from "jquery";
 import "../stylesheet/Menu.css";
 import { AiFillAppstore } from "react-icons/ai";

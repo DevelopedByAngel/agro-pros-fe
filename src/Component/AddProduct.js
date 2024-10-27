@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import $ from "jquery";
+import { backendURL } from ".././config/config.js";
 import "../stylesheet/AddProduct.css";
 class AddProduct extends Component {
 	constructor(props) {
@@ -35,7 +35,7 @@ class AddProduct extends Component {
 		const formData = new FormData();
 		formData.append("imgUploader", this.state.file.files[0]);
 		console.log("posting");
-		fetch("http://localhost:3000/uploadProduct", {
+		fetch(backendURL+"uploadProduct", {
 			method: "POST",
 			body: formData,
 			headers: {

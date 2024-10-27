@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { backendURL } from ".././config/config.js";
 import $ from "jquery";
 import "../stylesheet/AddProduct.css";
 class EditProduct extends Component {
@@ -28,7 +29,7 @@ class EditProduct extends Component {
 	submitted(e) {
 		e.preventDefault();
 		console.log("editing");
-		fetch("http://localhost:3000/editProduct", {
+		fetch(backendURL+"editProduct", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({

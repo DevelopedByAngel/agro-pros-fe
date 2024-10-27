@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { backendURL } from ".././config/config.js";
 import $ from "jquery";
 import "../stylesheet/ProfileHeader.css";
 import {AiOutlinePicLeft} from "react-icons/ai"
@@ -8,7 +9,7 @@ const ProfileHeader = (props) => {
 	var add = [];
 	var img;
 	if (user.path) {
-		img = "http://localhost:3000/" + user.path;
+		img = backendURL+"" + user.path;
 	} else {
 		img = "https://i.postimg.cc/t4LMTMx4/blue-user-head-png-18-1.png";
 	}

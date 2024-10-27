@@ -1,5 +1,4 @@
-import React,{Component} from 'react';
-import $ from 'jquery';
+import React from 'react';
 import  '../stylesheet/Menu.css'
 const Settings=(props)=>
 {

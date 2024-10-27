@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import $ from "jquery";
+import { backendURL } from ".././config/config.js";
 import "../stylesheet/AddProduct.css";
 class Buy extends Component {
 	constructor(props) {
@@ -15,7 +15,7 @@ class Buy extends Component {
 		e.preventDefault();
 		console.log("posting");
 
-		fetch("http://localhost:3000/editProduct", {
+		fetch(backendURL+"editProduct", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({

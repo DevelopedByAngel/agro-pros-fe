@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "../stylesheet/UploadDP.css";
-import { BsUpload } from "react-icons/bs";
+import { backendURL } from ".././config/config.js";
 class UploadDP extends Component {
 	constructor(props) {
 		super(props);
@@ -47,7 +47,7 @@ class UploadDP extends Component {
 		e.preventDefault();
 		const formData = new FormData();
 		formData.append("imgUploader", this.state.file.files[0]);
-		fetch("http://localhost:3000/uploadDP", {
+		fetch(backendURL+"uploadDP", {
 			method: "POST",
 			body: formData,
 			headers: new Headers({

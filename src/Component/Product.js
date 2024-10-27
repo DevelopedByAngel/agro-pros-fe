@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { backendURL } from ".././config/config.js";
 import $ from "jquery";
 import "../stylesheet/Product.css";
 class Product extends Component {
@@ -12,7 +13,7 @@ class Product extends Component {
 		if (qty == undefined) {
 			console.log("none");
 		} else {
-			fetch("http://localhost:3000/editProduct", {
+			fetch(backendURL+"editProduct", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
@@ -35,7 +36,7 @@ class Product extends Component {
 		}
 	}
 	view() {
-		fetch("http://localhost:3000/getBuyers", {
+		fetch(backendURL+"getBuyers", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
@@ -104,7 +105,7 @@ class Product extends Component {
 					<img
 						className="product-img"
 						alt=""
-						src={"http://localhost:3000/" + this.props.product.path}
+						src={backendURL+"" + this.props.product.path}
 					/>
 					<div className="details">
 						<p className="desc">{this.props.product.desc}</p>

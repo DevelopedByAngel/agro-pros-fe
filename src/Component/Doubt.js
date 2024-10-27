@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "../stylesheet/Comment.css";
-import { FcLike } from "react-icons/fc";
 import { GoReply } from "react-icons/go";
 class Doubt extends Component {
 	constructor(props) {

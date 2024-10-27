@@ -13,6 +13,7 @@ class PostList extends Component {
 	}
 	render() {
 		return this.props.postList.reverse().map((d) => {
+			console.log(d.path);
 			var li = d.caption.split(" ");
 			li = li.map((c) => {
 				var a = c;

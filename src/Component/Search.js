@@ -1,5 +1,5 @@
 import React from "react";
-import $ from "jquery";
+import { backendURL } from ".././config/config.js";
 import "../stylesheet/Search.css";
 import { ImSearch } from "react-icons/im";
 
@@ -11,7 +11,7 @@ const Search = (props) => {
 			<div className="profile">
 				<img
 					className="dp image"
-					src={"http://localhost:3000/" + profileImg}
+					src={backendURL+"" + profileImg}
 				/>
 			</div>
 			<div className="search">

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { MdCheck } from "react-icons/md";
 import "../stylesheet/Login.css";
 import "../stylesheet/Signup.css";
 import ClipLoader from "react-spinners/ClipLoader";

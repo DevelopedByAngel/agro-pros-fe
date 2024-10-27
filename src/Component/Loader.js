@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import $ from "jquery";
 import "../stylesheet/Loader.css";
 import PuffLoader from "react-spinners/PuffLoader";
 class Loader extends Component {

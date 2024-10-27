@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import $ from "jquery";
 class Review extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<div className="Comment" id={this.props.postno}>

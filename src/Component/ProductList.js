@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import $ from "jquery";
+import React from "react";
 import Product from "./Product.js";
 const ProductList = (props) => {
 	console.log(props);
